@@ -1,0 +1,19 @@
+Please find the below details.
+
+1) Yes its possible.You need to write Groovy Script to log the payload.
+
+https://blogs.sap.com/2016/04/19/hci-logging-using-groovy-scripts/
+
+https://blogs.sap.com/2016/04/20/hci-payload-logging-using-groovy-scripts-use-externalized-parameters/
+
+2) Retry mechanism is available for certain adapters only using JMS queues[ requires Enterprise License ] or data store entries[ For XI adapter ]
+
+https://blogs.sap.com/2018/06/04/cloud-integration-configuring-scenario-using-the-xi-receiver-adapter/
+
+https://blogs.sap.com/2018/06/04/cloud-integration-configuring-scenario-using-the-xi-sender-adapter/
+
+3) This depends on scenario ( holds good with above 2 mentioned scenarios.There is no option available for retry using MASS or bulk or through back ground processing.
+
+There is also possibility of handling retry or EO scenarios in your custom scenarios.You can follow below blog.
+
+https://blogs.sap.com/2016/05/11/exactly-once-in-sap-hana-cloud-integration/
