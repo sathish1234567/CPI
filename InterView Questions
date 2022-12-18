@@ -1,3 +1,7 @@
 1.  How to Trace the Request/Integration Flow?
 2.  How to debug the Integration Process in PRD System?
 3.  How to re-process the Iflow in PRD system means already executed?
+    Yes, it is possible
+    1.  activate the trace and take the payload
+    2.  ask to user provide the request to the CPI, then take it.
+    3.  and process once again from the POSTMAN
