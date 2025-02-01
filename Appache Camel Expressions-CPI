@@ -1,0 +1,44 @@
+https://sapcpidesign.blogspot.com/2018/10/camel-expressions-available-in-sap-cpi.html
+Camel Expressions available in SAP CPI
+
+Parameter	Description
+${in.body} or ${body}	Message Payload
+${header.var1}	Message Header Variable (var1)
+${property.prop1}	Exchange Property (prop1)
+${date:now:yyyy-MM-dd}	Current Date/Time with format
+${property. SAP_MessageProcessingLogID}	Message Guid
+${CamelFileName}	File Name
+${CamelHttpUri}	HTTP URI (URL with QueryString)
+${CamelDestinationOverrideUrl}	SOAP Adapter URL
+${exception.message}	Error Message
+${exception.stacktrace}	Error Stacktrace
+${camelId}	Iflow Name
+${SAP_ApplicationID}	ID created in Message Processing Log for searching in monitoring
+
+Relative Paths	
+Expression	Returns
+file:absolute	FALSE
+file:absolute.path	\workspace\camel\camel-core\target\filelanguage\test\hello.txt
+file:ext	txt
+file:name	test\hello.txt
+file:name.ext	txt
+file:name.noext	test\hello
+file:onlyname	hello.txt
+file:onlyname.noext	hello
+file:parent	filelanguage\test
+file:path	filelanguage\test\hello.txt
+
+Absolute Paths	
+Expression	Returns
+file:absolute	TRUE
+file:absolute.path	\workspace\camel\camel-core\target\filelanguage\test\hello.txt
+file:ext	txt
+file:name	test\hello.txt
+file:name.ext	txt
+file:name.noext	test\hello
+file:onlyname	hello.txt
+file:onlyname.noext	hello
+file:parent	\workspace\camel\camel-core\target\filelanguage\test
+file:path	\workspace\camel\camel-core\target\filelanguage\test\hello.txt
+
+ Like3 
