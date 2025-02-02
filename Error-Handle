@@ -1,0 +1,10 @@
+"SAP Integration Suite application is not subscribed" error in BTP trial account
+--https://community.sap.com/t5/technology-q-a/quot-sap-integration-suite-application-is-not-subscribed-quot-error-in-btp/qaq-p/13939162
+
+You are not authorized to access the page "shell/design/package" or the page does not exist; contact your application or tenant administrator.
+--  Artifact Error
+--  https://community.sap.com/t5/product-lifecycle-management-q-a/artifact-error/qaq-p/12696251
+-- https://help.sap.com/docs/SAP_INTEGRATION_SUITE/51ab953548be4459bfe8539ecaeee98d/2c6214a3228e4b4cba207f49fda92ed4.html
+
+Assign roles
+-- https://help.sap.com/docs/integration-suite/sap-integration-suite/configuring-user-access?locale=en-US%26version%3DCLOUD
