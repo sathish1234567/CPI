@@ -1,0 +1,111 @@
+Here’s a clear and structured explanation of Outbound IDoc Configuration in SAP 👇
+
+🔹 Outbound IDoc Configuration Steps
+
+Outbound IDoc = Data sent from SAP to another system (e.g., CPI, third-party app, another SAP system).
+
+1. Create Logical System
+
+T-code: BD54
+
+Define a logical system name for both sender (SAP) and receiver (target system).
+
+Example:
+
+Sender: DCLCLNT100
+
+Receiver: CPICLNT200
+
+2. Assign Logical System to Client
+
+T-code: SCC4
+
+Edit your SAP client entry → assign the Logical System created in BD54.
+
+3. Create RFC Destination
+
+T-code: SM59
+
+Type: T (TCP/IP Connection) or H (HTTP) depending on the interface.
+
+This connects SAP to the target system (like CPI, PI/PO, or another SAP).
+
+Example: RFC_CPI_OUTBOUND
+
+4. Create/Check Port
+
+T-code: WE21
+
+Create a Transactional RFC (tRFC) port or HTTP Port:
+
+For tRFC: Select “Transactional RFC” → give a name → link to the RFC destination.
+
+For HTTP: Select “XML HTTP” → provide target URL and authentication details.
+
+5. Create Partner Profile
+
+T-code: WE20
+
+Partner Type: LS (Logical System)
+
+Add an Outbound Parameters entry:
+
+Message Type: e.g., ORDERS, DELVRY03, ZCUSTOM_IDOC
+
+Receiver Port: (from WE21)
+
+Output Mode: Immediate Processing (or Background)
+
+IDoc Type: e.g., ORDERS05, ZIDOC_TYPE
+
+Process Code: (custom or standard, e.g., ME10 for Orders)
+
+6. Message Control (Optional)
+
+If triggered from an application (like Sales Order, Invoice, etc.):
+
+T-code: NACE
+
+Application area: e.g., V1 (Sales)
+
+Create an Output Type
+
+Assign Partner Function
+
+Link to Processing Routine / Program / Form
+
+7. Distribution Model (Optional for ALE)
+
+T-code: BD64
+
+Create a Model View
+
+Add Sender / Receiver logical systems
+
+Assign Message Type
+
+8. Generate Partner Profiles from Model
+
+T-code: BD82
+
+This automatically creates WE20 entries based on BD64.
+
+9. Testing the Outbound IDoc
+
+Trigger the IDoc (from application or manually).
+
+T-code: WE02 or WE05 → to monitor IDoc status.
+
+Status Codes:
+
+03 – Data passed to port OK
+
+12 – Dispatch OK
+
+02 – Error during transfer
+
+10. Reprocessing / Error Handling
+
+T-code: BD87 → Reprocess failed IDocs.
+
+T-code: WE19 → Test tool for IDoc generation.
